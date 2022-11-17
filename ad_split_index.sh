@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DATASET=$1
+DATA_DIR=$HOME"/cnsm2022/data/"
+RNN_LEN=16				 #nsl-kdd					unsw-nb15
+TRAIN_RATIO=0.2556160109285376 # 0.8     0.848205929287556 	0.6785647434300448	0.3195200136606720	0.2556160109285376
+VALID_RATIO=0.0639040027321344 # 0.2               		0.1696411858575112				0.0639040027321344
+TEST_RATIO=0.6804799863393280  #0.0       0.151794070712444				0.6804799863393280
+
+python3 ad_split_index.py \
+    --dataset=$DATASET \
+    --data_dir=$DATA_DIR \
+    --rnn_len=$RNN_LEN \
+    --train_ratio=$TRAIN_RATIO \
+    --valid_ratio=$VALID_RATIO \
+    --test_ratio=$TEST_RATIO \
